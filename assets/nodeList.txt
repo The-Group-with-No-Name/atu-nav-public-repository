@@ -1,0 +1,5 @@
+A001 active 10 20 A002 A003 A004 Corley
+A002 active 12 38 A001 A003 A004 Corley
+A003 inactive 20 5 A001 A002 A004 Corley
+A004 active 20 30 A001 A002 A003 Corley
+Corley active 20 40 A001 A002 A003 A004

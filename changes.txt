@@ -1,0 +1,150 @@
+Changes made 4/17/2024 by Jeffrey Hough
+ - Added user icon dropdown to settings.
+ - Changed main 'Themes' heading in settings to 'Settings".
+ - Moved default settings to the tops of their respective lists.
+ - Added 'JerryIcon.png' to assets.
+ - Changed the name of 'TheFaceSmall.png' to 'TheFace.png'.
+ - Added a 'Custom Destination' option in destination dropdown (currently only shows coords).
+ - Changed some stuff in atuStyles, darkStyles, and lightStyles.
+ - Made some fixes to flags on NavigationFunctions.
+
+Changes made 4/16/2024 by Curtis Short
+ - Updates to ATU and Dark map themes.
+
+Changes made 4/10/2024 by Jeffrey Hough
+ - Off Road navigation now works.
+ - The user icon is now controlled by the userIcon context variable.
+ - There is now a seperate marker for the user and destination.
+      * Destination marker is not working quite right yet.
+ - New asset DestinationTestMarker.png added for testing purposes.
+ - New code added for reroute (doesn't currently work).
+
+Changes made 4/5/2024 by Curtis Short
+ - Changed the 'Cancel' button to 'X' for a consise and minimalist look.
+ - App Style Changes to buttons and dropdown menu for the three current app styles. (Need to arrange the navigation buttons
+   as some overlap, especially the 'Cancel' button and the 'Start' button.)
+ 
+Changes made 4/3/2024 by Jeffrey Hough
+ - Location tracking is now togglable via locationTrackingFlag useState.
+ - Navigation now only runs if location permissions are gotten (avoids a crash).
+ - Navigation now shows path and gives a cancelation option.
+ - Buttons for stopping the path or rerouting now exist (reroute not yet implemented).
+ - NavigationButton style changed for all styles.
+
+Changes made 4/2/2024 by Curtis Short
+ - Changed some colors for the app styles
+ - Started dropdown menu for poly line color setting (Now Work Good).
+
+Changes made 4/2/2024 by Jeffrey Hough
+ - Location is now tracked with watchPositionAsync to avoid crashes.
+ - Path now connects to user location.
+
+Changes made 3/29/2024 by Jeffrey Hough
+ - Map now follows user.
+    * Updates position every second.
+    * To update faster, edit userLocationUpdateInterval in MapView element in MapFunctions.
+ - Map constantly follows user, so if the user moves the map, the map will currently
+    snap back to the user's location (may be fixable in the future).
+ - Changed provider in MapView from 'google' to GOOGLE_PROVIDER.
+
+Changes made 3/28/2024 by Curtis Short
+ - Consolidated styles into one style for each app Themes
+ - Changed references from the old styles sheet to styles.js (now references conVars.appStyle)
+ - Removed app-themes folder and moved to styles folder
+
+Changes made 3/28/2024 by Jeffrey Hough
+ - Streamlined Context.
+ - Start button in Navigation now updates the polyline.
+ - Map now opens at user location (might follow, untested).
+
+Changes made 3/26/2024 by Curtis Short
+ - Changed the style for navigation page.
+ - Moved navigation button on the main map page.
+
+Changes made 3/20/2024 by Jeffrey Hough
+ - Added 'Context' to important variables (allows for runtime re-rendering).
+ - Added 'NavigationFunctions' file (describes navigations screen).
+ - Overhauled UseEffect, functions moved to bottom of App.js
+ - Moved 'MapScreen' to 'MapFunctions' and reworked to use context variables.
+ - Added a 'MainAppStyles' to style-sheets in styles.
+ - Reworked Map Themes in settings page to work with context variables.
+ - Moved navigation pane into its own function.
+ - 'Require Cycle' refers to calling and using the stack from App.js, it is NOT uninitialized.
+
+Changes made 3/6/2024 by Curtis Short
+ - Changed settings page buttons to dropdown menus.
+ - Changed the loog of setting page.
+
+Changes made 2/28/2024 by Curtis Short and Jeffrey Hough
+ - Added an app styles button to settings page.
+ - Reformatted settings page.
+ - Changed path finding algorithm to consider distance traveled
+    as well as proximity to destination when choosing a path.
+
+Changes made 2/21/2024 by Jeffrey Hough
+ - MapView element moved to MapFunctions.js
+ - mapStyleIndex, polyLineCoordinates, and markers moved to MapFunctions.js
+ - setMapThemeButton moved to Settings.js
+ - Two returns (one commented out) exist
+     * One has working stack (multiple views) but views currently wont update
+     * One has updating map elements but no stack (only one view)
+ - Many commented out old code blocks were moved to the bottom of App.js
+ - retroMap.js replaced with westernMap.js because javaScript refuses to read retroMap.js
+
+Changes made 2/20/2024 by Curtis Short and Jeffrey Hough
+ - run 'npm install @react-navigation/native'
+ - run 'npm install @react-navigation/native-stack'
+ - Settings screen can now be naivigated to
+ - Added functions for path and markers
+ - MapView wont update after mounting to stack for some reason
+ - Changed styles for the map and buttons
+
+Changes made 2/15/2024 by Jeffrey Hough
+ - Added path button (adds a marker every time pressed)
+
+Changes made 2/9/2024 by Jeffrey Hough
+ - Exchanged dijkstras algorithm for coordinate comparative algorithm.
+ - Added (potentially functional) reroute function.
+
+ Changes 2/8/2024 by Curtis Short 
+ - Added Settings button (still need to add functionality)
+ - Added current location button (still need to add functionality)
+
+Changes made 2/4/2024 by Jacob Williford
+ - Use command 'npx expo install 
+ - Change
+ - Tracks location of user to log as they move around within the app
+ - 
+By Jeffrey Same Day
+ - Added real ATU nodes.
+
+Changes made 11/16/2023 by Jeffrey Hough:
+ - Use command 'npx expo install expo-asset expo-file-system'
+ - Use command 'npm i @expo/metro-config'
+ - Added 'metro.config.js' to project file.
+ - Added lines to 'babel.config.js'
+ - Added file reading to buildMasterNodeArray.
+ - Moved all location functions to their own file to clean up App.js.
+ 
+ Changes made 11/08/2023 by Jeffrey Hough:
+ - Finished testing shortest-path algorithm.
+ - Consolidated location test buttons into one button.
+
+Changes made 11/06/2023 by Jeffrey Hough:
+ - Reworked shortest path algorithm.
+ - Reworked location node naming scheme.
+
+Changes made 11/02/2023 by Jeffrey Hough:
+ - Seperated related functions into their own areas.
+ - Created a functioning location node struct.
+ - Made a shortest path function (untested).
+
+Changes made 10/31/2023 by Jeffrey Hough:
+ - Commented out and in some cases removed unused imports.
+ - Added format lines for easier navigation (I was having trouble reading where the main app ended).
+ - Commented out position log to the development server, but did not remove it.
+ - Started work on location nodes (commented out since they currently do not work).
+ - Seperate note to appease Curtis, the app still continues functioning even if you disable the
+    development server. The connection is only needed for real-time updates.
+
+
