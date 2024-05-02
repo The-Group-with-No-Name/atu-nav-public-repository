@@ -7,12 +7,10 @@ import { StatusBar } from 'expo-status-bar';
 
 import { findShortestSidewalkPath, findClosestNode } from './LocationFunctions';
 import { MapContext, Stack, masterNodeArray, LocationPermissionsFlag } from './App'
-//import { TextInput } from 'react-native-gesture-handler';
 
-//import { styles } from './styles/styles'
 
 /*
-This Holds All StuffRelated to the Navigation Screen
+This Holds All Stuff Related to the Navigation Screen
 */
 
 
@@ -49,8 +47,7 @@ export function NavigationScreen({ navigation }){
     );
 }
 
-// <Text style={conVars.appStyle.Heading2}>Start Location</Text>
-// {StartNodeDropdownComponent()}
+
 
 // ******** Navigation Elements ************************************************************************************
 
@@ -334,52 +331,3 @@ export function navigationButtonPressed({navigation, conVars}){
 function GetMyCoordsButtonPressed({conVars}){
   Alert.alert("Latitude: " + conVars.latitude + "\nLongitude: " + conVars.longitude);
 }
-
-
-
-
-  /*
-// Places markers at path nodes
-export function markersButtonPressed(startNodeName, endNodeName,
-    shortestPathNodeList, masterNodeArray){
-
-  // Clear current markers if any
-  markers.length = 0;
-
-  // Find Shortest Path
-  findShortestSidewalkPath(startNodeName, endNodeName, shortestPathNodeList, masterNodeArray);
-  
-  // Variables
-  var currentNodeLatitude = 0.0;
-  var currentNodeLongitude = 0.0;
-  var currentNodeName = '';
-  var markersTemp = [];
-
-  
-  // Load each node in shortestPathNodeList into markers
-  for(currentNode = 0; currentNode < shortestPathNodeList.length; currentNode++){
-
-    currentNodeLatitude = masterNodeArray[shortestPathNodeList[currentNode]].nodeLatitude;
-    currentNodeLongitude = masterNodeArray[shortestPathNodeList[currentNode]].nodeLongitude;
-    currentNodeName = masterNodeArray[shortestPathNodeList[currentNode]].nodeName;
-
-    
-    console.log("latitude: ", currentNodeLatitude,
-    "longitude: ",currentNodeLongitude,
-    "name: ", currentNodeName);
-    
-
-    // Adds the node to the marker list
-    markersTemp.push({
-      latitude: currentNodeLatitude,
-      longitude: currentNodeLongitude,
-      latitudeDelta: 0.001,
-      longitudeDelta: 0.001,
-      name: currentNodeName
-    });
-  }
-
-  markers = markersTemp;
-  console.log("markers: ", markers.length);
-}
-*/

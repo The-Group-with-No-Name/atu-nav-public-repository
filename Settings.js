@@ -44,10 +44,6 @@ const userIcons = [
 
 
 
-// Values passed to MapFunction.js (No Longer In Use)
-//var appThemeValue = 0;
-//var mapThemeValue = 0;
-//var PathColorValue = 0;
 
 // Need to change to keep values through app instances
 var currentAppTheme = currentAppTheme;
@@ -116,9 +112,6 @@ function appThemeDropdownComponent(){
       onChange={item => {
         setValue(item.value);
         conVars.setAppStyle(item.value);  // Updates the appStyle useState in context
-        //appThemeValue = item.value;
-        // For checking to make sure value updates correctly
-        //console.log('Map Style Index: ', item.value)
         currentAppTheme = item.label;
       }}
       renderItem={renderItem}
@@ -154,9 +147,6 @@ function mapThemeDropdownComponent(){
       onChange={item => {
         setValue(item.value);
         conVars.setMapStyle(item.value);  // Updates the mapStyle useState in context
-        //mapThemeValue = item.value;
-        // For checking to make sure value updates correctly
-        //console.log('Map Style Index: ', item.value)
         currentMapTheme = item.label;
       }}
       renderItem={renderItem}
@@ -236,9 +226,6 @@ function userIconDropdownComponent(){
       onChange={item => {
         setValue(item.value);
         conVars.setUserIcon(item.value);  // Updates the mapStyle useState in context
-        //mapThemeValue = item.value;
-        // For checking to make sure value updates correctly
-        //console.log('Map Style Index: ', item.value)
         currentUserIcon = item.label;
       }}
       renderItem={renderItem}

@@ -4,11 +4,9 @@ import MapView, { AnimatedRegion, Marker, PROVIDER_GOOGLE, Polyline } from 'reac
 import * as Location from 'expo-location';
 import { StatusBar } from 'expo-status-bar';
 
-//import { findShortestSidewalkPath } from './LocationFunctions';
 import { MapContext, Stack, masterNodeArray } from './App'
 import { navigationButtonPressed } from './NavigationFunctions'
 
-//import { styles } from './styles/styles'
 
 /*
 
@@ -47,7 +45,6 @@ export function MapScreen({ navigation }){
 
 
 
-//{mapStyle, setMapStyle, polyLine, setPolyLine, markerList, setMarkerList}
 
 // ******* Map Screen Elements *************************************************************************************
 
@@ -104,16 +101,7 @@ export function dynamicMapViewElement(){
   );
 }
 
-/*
-// Method of using markers not currently in use
-      {conVars.markerList.map((marker,index) =>(
-        <Marker 
-          key={index}
-          coordinate={marker}
-          image={require('./assets/TheFaceSmall.png')}
-        />
-      ))}
-*/
+
 
 
 
@@ -272,91 +260,3 @@ function stopButtonPressed({conVars}){
   conVars.setNavigatingFlag(false);
   conVars.setLocationTrackingFlag(true);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-// *************** Styles ******************************************************************************************
-
-// Changes mapStyleIndex, will eventually do more than swap between them
-export function mapThemeSelected(mapThemeValue){
-
-  mapStyleIndex = mapThemeValue;
-  
-}
-
-// Read in MapView, uses mapStyleIndex to determine a map style
-function mapThemeSelector(){
-  switch(mapStyleIndex){
-    case 0:
-      return lightMap;
-      break;
-    case 1:
-      return darkMap;
-      break;
-    case 2:
-      return retroMap;
-      break;
-    case 3:
-      return atuMap;
-      break;
-  }
-}
-
-
-// Changes the map style (logic is very basic at the moment)
-export function mapStyleSelector(mapStyleIndex){
-    
-    console.log(mapStyleIndex);
-
-    switch(mapStyleIndex){
-        case 1:
-            mapStyle = darkMap;
-            break;
-        case 2:
-            mapStyle = darkMap;
-            break;
-        default:
-            mapStyle = darkMap;
-            break;
-    }
-
-    return mapStyle;
-}
-*/
-
-
-/*
-function LocationTrackingToggleButton({conVars}){
-  return(
-    <TouchableOpacity style={conVars.appStyle.backButton} onPress={() => LocationTogglePressed({conVars})}>
-        <Text style={conVars.appStyle.centeredText}>Toggle</Text>
-    </TouchableOpacity>
-  );
-}
-
-function LocationTogglePressed({conVars}){
-  if(conVars.locationTrackingFlag == true){
-    conVars.setLocationTrackingFlag(false);
-    console.log("Location Tracking: OFF");
-  }
-  else{
-    conVars.setLocationTrackingFlag(true);
-    console.log("Location Tracking: ON");
-  }
-}
-
-*/
